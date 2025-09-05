@@ -98,11 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll animations
     function animateOnScroll() {
         const elements = document.querySelectorAll('.timeline__item, .skill__item, .certification__item, .highlight');
-        
         elements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
             const elementVisible = 150;
-            
+
             if (elementTop < window.innerHeight - elementVisible) {
                 element.classList.add('animate-on-scroll');
             }
@@ -112,31 +111,56 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Initial call
 
-    // Contact form handling
+    // Contact form handling with Formspree
     const contactForm = document.getElementById('contactForm');
     
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Create mailto link
-        const mailtoLink = `mailto:tyler.mullins357@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
-        
-        // Show success message
-        showFormMessage('Thank you for your message! Your default email client should open with the message ready to send.', 'success');
-        
-        // Open mailto link
-        window.location.href = mailtoLink;
-        
-        // Reset form
-        contactForm.reset();
-    });
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                // Submit to Formspree
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    showFormMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    // Handle errors
+                    const data = await response.json();
+                    if (data.errors) {
+                        showFormMessage('There was an error with your submission. Please check your form and try again.', 'error');
+                    } else {
+                        showFormMessage('Oops! There was a problem submitting your form. Please try again.', 'error');
+                    }
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showFormMessage('There was a problem sending your message. Please try again later.', 'error');
+            } finally {
+                // Reset button
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            }
+        });
+    }
 
     // Form message display function
     function showFormMessage(message, type) {
@@ -150,19 +174,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const messageDiv = document.createElement('div');
         messageDiv.className = `form-message status status--${type}`;
         messageDiv.textContent = message;
-        
+
         // Insert message before the form
         contactForm.parentNode.insertBefore(messageDiv, contactForm);
-        
+
         // Remove message after 5 seconds
         setTimeout(() => {
-            messageDiv.remove();
+            if (messageDiv.parentNode) {
+                messageDiv.remove();
+            }
         }, 5000);
     }
 
     // Form validation styling
     const formInputs = document.querySelectorAll('.form-control');
-    
     formInputs.forEach(input => {
         input.addEventListener('blur', function() {
             if (this.checkValidity()) {
@@ -173,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.add('invalid');
             }
         });
-        
+
         input.addEventListener('input', function() {
             this.classList.remove('invalid', 'valid');
         });
@@ -201,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const hero = document.querySelector('.hero');
         const scrolled = window.pageYOffset;
         const rate = scrolled * -0.5;
-        
+
         if (hero && scrolled < hero.offsetHeight) {
             hero.style.transform = `translateY(${rate}px)`;
         }
@@ -221,7 +246,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(type, speed);
             }
         }
-        
         type();
     }
 
@@ -258,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
         skill.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-4px) scale(1.02)';
         });
-        
+
         skill.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
         });
@@ -268,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleNavbarScroll() {
         const header = document.querySelector('.header');
         const scrolled = window.pageYOffset;
-        
+
         if (scrolled > 50) {
             header.style.backgroundColor = 'var(--color-surface)';
             header.style.boxShadow = 'var(--shadow-sm)';
