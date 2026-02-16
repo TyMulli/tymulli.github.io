@@ -572,7 +572,9 @@ a:hover {
   padding: 120px 0 80px;
   text-align: center;
   overflow: hidden;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.55), transparent 60%);
 }
+
 
 .hero__content {
   max-width: 800px;
