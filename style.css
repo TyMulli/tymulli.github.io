@@ -175,9 +175,9 @@ body {
 .page-background {
   position: fixed;
   inset: 0;
-  z-index: -1;               /* keep it behind everything */
+  z-index: -1;
   overflow: hidden;
-  pointer-events: none;      /* don't block clicks */
+  pointer-events: none;
   background:
     radial-gradient(circle at top, rgba(33, 128, 141, 0.18), transparent 55%),
     radial-gradient(circle at bottom, rgba(94, 82, 64, 0.25), transparent 55%),
@@ -233,7 +233,7 @@ body {
   animation: grid-pan 40s linear infinite;
 }
 
-/* Animations for background elements */
+/* Animations */
 @keyframes float-orb-slow {
   0% {
     transform: translate3d(0, 0, 0);
@@ -566,14 +566,15 @@ a:hover {
   }
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
   position: relative;
   padding: 120px 0 80px;
   text-align: center;
   overflow: hidden;
-  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.55), transparent 60%);
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.7), transparent 60%);
 }
+
 
 
 .hero__content {
@@ -764,10 +765,11 @@ a:hover {
   border-radius: var(--radius-full);
 }
 
-/* About */
+/* About Section */
 .about {
-  background: var(--color-surface);
+  background: rgba(15, 23, 42, 0.82);
 }
+
 
 .about__content {
   max-width: 900px;
@@ -814,10 +816,11 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-/* Experience */
+/* Experience Section */
 .experience {
-  background: var(--color-background);
+  background: rgba(15, 23, 42, 0.9);
 }
+
 
 .experience__timeline {
   max-width: 800px;
@@ -902,10 +905,11 @@ a:hover {
   font-size: var(--font-size-sm);
 }
 
-/* Skills */
+/* Skills Section */
 .skills {
-  background: var(--color-surface);
+  background: rgba(15, 23, 42, 0.82);
 }
+
 
 .skills__grid {
   display: grid;
@@ -943,10 +947,11 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-/* Certifications */
+/* Certifications Section */
 .certifications {
-  background: var(--color-background);
+  background: rgba(15, 23, 42, 0.9);
 }
+
 
 .certifications__grid {
   display: grid;
@@ -981,9 +986,9 @@ a:hover {
   margin-bottom: var(--space-12);
 }
 
-/* Education */
+/* Education Section */
 .education {
-  background: var(--color-surface);
+  background: rgba(15, 23, 42, 0.82);
 }
 
 .education__content {
@@ -992,9 +997,9 @@ a:hover {
   text-align: center;
 }
 
-/* Contact */
+/* Contact Section */
 .contact {
-  background: var(--color-background);
+  background: rgba(15, 23, 42, 0.9);
 }
 
 .contact__content {
