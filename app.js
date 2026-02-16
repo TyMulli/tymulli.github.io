@@ -157,12 +157,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   setTimeout(() => {
-    const heroSubtitle = document.querySelector(".hero__subtitle");
-    if (heroSubtitle) {
-      const originalText = heroSubtitle.textContent.trim();
-      typeWriter(heroSubtitle, originalText, 70);
-    }
-  }, 600);
+  const heroSubtitle = document.querySelector('.hero__subtitle-text');
+  if (heroSubtitle) {
+    const originalText = heroSubtitle.textContent.trim();
+    typeWriter(heroSubtitle, originalText, 70);
+  }
+}, 600);
+
 
   // Contact form handling (Formspree)
   const contactForm = document.getElementById("contactForm");
