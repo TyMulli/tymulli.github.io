@@ -54,6 +54,9 @@ function activateKonamiMode() {
     // Apply rainbow animation to header
     applyRainbowEffect();
     
+    // Create cursor trail toggle button
+    createTrailToggle();
+    
     // Award achievement
     unlockAchievement('konami', '🎮 Konami Master', 'You found the legendary code!');
 }
@@ -68,6 +71,13 @@ function deactivateKonamiMode() {
     const header = document.querySelector('.header');
     if (header) header.style.animation = '';
     
+    // Remove trail toggle button
+    if (trailToggle) {
+        trailToggle.remove();
+        trailToggle = null;
+        cursorTrailEnabled = false;
+    }
+    
     showNotification('🎮 Konami Mode Deactivated', 'Press the code again to reactivate!');
 }
 
@@ -79,7 +89,7 @@ function showKonamiNotification() {
             <div class="konami-notification__icon">🎮</div>
             <div class="konami-notification__text">
                 <strong>KONAMI CODE ACTIVATED!</strong>
-                <p>Gaming mode enabled</p>
+                <p>Gaming mode enabled • Cursor trail unlocked</p>
             </div>
         </div>
     `;
@@ -321,6 +331,7 @@ function createAchievementPanel() {
 let cursorTrailEnabled = false;
 const trailParticles = [];
 const maxTrailParticles = 15;
+let trailToggle = null;
 
 function createCursorTrail(e) {
     if (!cursorTrailEnabled) return;
@@ -354,23 +365,34 @@ document.addEventListener('mousemove', createCursorTrail);
 
 // Auto-enable cursor trail in Konami mode
 setInterval(() => {
-    cursorTrailEnabled = konamiActivated;
+    if (konamiActivated && !trailToggle) {
+        cursorTrailEnabled = true;
+    }
 }, 100);
 
-// Add toggle for cursor trail
-const trailToggle = document.createElement('button');
-trailToggle.className = 'trail-toggle';
-trailToggle.innerHTML = '✨';
-trailToggle.title = 'Toggle Cursor Trail';
-trailToggle.addEventListener('click', () => {
-    cursorTrailEnabled = !cursorTrailEnabled;
-    trailToggle.classList.toggle('active', cursorTrailEnabled);
-    showNotification(
-        cursorTrailEnabled ? '✨ Cursor Trail Enabled' : '✨ Cursor Trail Disabled',
-        ''
-    );
-});
-document.body.appendChild(trailToggle);
+// Create toggle for cursor trail (only when Konami mode is activated)
+function createTrailToggle() {
+    if (trailToggle) return; // Already exists
+    
+    trailToggle = document.createElement('button');
+    trailToggle.className = 'trail-toggle active';
+    trailToggle.innerHTML = '✨';
+    trailToggle.title = 'Toggle Cursor Trail';
+    
+    // Start enabled
+    cursorTrailEnabled = true;
+    
+    trailToggle.addEventListener('click', () => {
+        cursorTrailEnabled = !cursorTrailEnabled;
+        trailToggle.classList.toggle('active', cursorTrailEnabled);
+        showNotification(
+            cursorTrailEnabled ? '✨ Cursor Trail Enabled' : '✨ Cursor Trail Disabled',
+            ''
+        );
+    });
+    
+    document.body.appendChild(trailToggle);
+}
 
 // Initialize achievement system
 createAchievementPanel();
@@ -1056,6 +1078,6 @@ console.log('Tyler Mullins Portfolio loaded successfully!');
 console.log('🎮 Easter Eggs Available:');
 console.log('   - Try the Konami Code: ↑ ↑ ↓ ↓ ← → ← → B A');
 console.log('   - Explore all sections to unlock achievements');
-console.log('   - Toggle cursor trail with the ✨ button');
 
 });
+
