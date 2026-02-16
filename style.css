@@ -553,9 +553,13 @@ a:hover {
 
 .hero__title {
   margin-bottom: var(--space-16);
+  font-size: 3rem; /* slightly smaller so full name fits better */
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-text) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  word-break: normal;
+  white-space: normal; /* allow wrapping if needed */
 }
 
 .hero__title-accent {
@@ -574,12 +578,6 @@ a:hover {
   opacity: 0.5;
 }
 
-.hero__subtitle {
-  font-size: var(--font-size-xl);
-  color: var(--color-primary);
-  margin-bottom: var(--space-8);
-  font-weight: var(--font-weight-semibold);
-}
 
 .hero__description {
   font-size: var(--font-size-lg);
