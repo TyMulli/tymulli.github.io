@@ -1,4 +1,4 @@
-// Tyler Mullins Portfolio JavaScript - Enhanced with Gaming Easter Eggs
+// Tyler Mullins Portfolio JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
 
