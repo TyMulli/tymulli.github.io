@@ -139,30 +139,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", parallaxEffect);
 
-  // Typing animation for hero subtitle
-  function typeWriter(element, text, speed = 70) {
-    if (!element) return;
-    let i = 0;
-    element.textContent = "";
+// Typing animation for hero subtitle only
+function typeWriter(element, text, speed = 70) {
+  if (!element) return;
+  let i = 0;
+  element.textContent = "";
 
-    function type() {
-      if (i < text.length) {
-        element.textContent += text.charAt(i);
-        i++;
-        setTimeout(type, speed);
-      }
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
     }
-
-    type();
   }
 
-  setTimeout(() => {
-  const heroSubtitle = document.querySelector('.hero__subtitle-text');
+  type();
+}
+
+setTimeout(() => {
+  const heroSubtitle = document.querySelector(".hero__subtitle-text");
   if (heroSubtitle) {
-    const originalText = heroSubtitle.textContent.trim();
+    const originalText = heroSubtitle.getAttribute("data-full-text") ||
+      heroSubtitle.textContent.trim();
+    heroSubtitle.setAttribute("data-full-text", originalText);
     typeWriter(heroSubtitle, originalText, 70);
   }
 }, 600);
+
 
 
   // Contact form handling (Formspree)
