@@ -166,10 +166,95 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle at top, rgba(33, 128, 141, 0.08), transparent),
-    radial-gradient(circle at bottom, rgba(94, 82, 64, 0.08), transparent);
   min-height: 100vh;
+  color: var(--color-text);
+  background-color: #020617; /* fallback behind the fixed layer */
 }
+
+/* Full-page animated background layer */
+.page-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;               /* keep it behind everything */
+  overflow: hidden;
+  pointer-events: none;      /* don't block clicks */
+  background:
+    radial-gradient(circle at top, rgba(33, 128, 141, 0.18), transparent 55%),
+    radial-gradient(circle at bottom, rgba(94, 82, 64, 0.25), transparent 55%),
+    linear-gradient(180deg, #020617 0%, #020d12 40%, #020617 100%);
+}
+
+/* Soft glowing orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(42px);
+  opacity: 0.75;
+  mix-blend-mode: screen;
+  animation: float-orb-slow 26s ease-in-out infinite alternate;
+}
+
+.bg-orb--teal {
+  width: 380px;
+  height: 380px;
+  background: rgba(56, 189, 248, 0.7);
+  top: -80px;
+  left: -120px;
+}
+
+.bg-orb--amber {
+  width: 420px;
+  height: 420px;
+  background: rgba(251, 191, 36, 0.55);
+  bottom: -140px;
+  right: -140px;
+  animation-delay: 4s;
+}
+
+.bg-orb--pink {
+  width: 320px;
+  height: 320px;
+  background: rgba(244, 114, 182, 0.55);
+  top: 40%;
+  right: 10%;
+  animation-delay: 8s;
+}
+
+/* Subtle grid overlay */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 140px 140px;
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+  animation: grid-pan 40s linear infinite;
+}
+
+/* Animations for background elements */
+@keyframes float-orb-slow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(30px, -20px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-10px, 30px, 0) scale(1.02);
+  }
+}
+
+@keyframes grid-pan {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-80px, -80px, 0);
+  }
+}
+
 
 /* Skip link */
 .skip-link {
