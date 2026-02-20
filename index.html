@@ -3,362 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyler Mullins - Product Manager</title>
-    <meta name="description" content="Tyler Mullins is a Product Manager at Plateau Telecommunications in Clovis, New Mexico. Specializing in business analysis, software project management, and telecommunications innovation.">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Tyler Mullins — Product Manager</title>
+    <meta name="description" content="Tyler Mullins is a Product Manager at Plateau Telecommunications in Clovis, New Mexico, specializing in business analysis, Agile leadership, and telecommunications innovation.">
+    <meta name="keywords" content="Tyler Mullins, Product Manager, Business Analysis, Agile, Telecommunications, Clovis New Mexico">
+    <meta name="author" content="Tyler Mullins">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ty-mullins.com/">
+    <meta property="og:title" content="Tyler Mullins — Product Manager">
+    <meta property="og:description" content="Product Manager specializing in business analysis, Agile leadership, and telecommunications innovation.">
+    <meta property="og:image" content="https://i.imgur.com/J3OwHSf.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header class="header">
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="header" id="header">
         <nav class="navbar container">
-            <div class="navbar__brand">
-                <h2 class="m-0 navbar__logo">Tyler Mullins</h2>
-            </div>
+            <a href="#hero" class="navbar__brand">TM</a>
             <div class="navbar__menu" id="navbarMenu">
                 <ul class="navbar__nav">
-                    <li><a href="#hero" class="navbar__link">Home</a></li>
-                    <li><a href="#about" class="navbar__link">About</a></li>
-                    <li><a href="#experience" class="navbar__link">Experience</a></li>
-                    <li><a href="#skills" class="navbar__link">Skills</a></li>
+                    <li><a href="#about"          class="navbar__link">About</a></li>
+                    <li><a href="#experience"     class="navbar__link">Experience</a></li>
+                    <li><a href="#skills"         class="navbar__link">Skills</a></li>
                     <li><a href="#certifications" class="navbar__link">Certifications</a></li>
-                    <li><a href="#education" class="navbar__link">Education</a></li>
-                    <li><a href="#contact" class="navbar__link">Contact</a></li>
+                    <li><a href="#education"      class="navbar__link">Education</a></li>
+                    <li><a href="#contact"        class="navbar__link">Contact</a></li>
                 </ul>
             </div>
-            <button class="navbar__toggle" id="navbarToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="navbar__actions">
+                <a href="resume.pdf" download class="btn btn--outline btn--sm" aria-label="Download Resume">
+                    <i class="fa-solid fa-download"></i> Resume
+                </a>
+                <button class="navbar__toggle" id="navbarToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+
+    <!-- ===== HERO ===== -->
     <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero__content">
-                <div class="hero__profile">
-                    <img src="https://i.imgur.com/J3OwHSf.jpeg" alt="Tyler Mullins - Product Manager" class="hero__photo">
-                </div>
+        <div class="hero__bg"></div>
+        <div class="container hero__container">
+            <div class="hero__text">
+                <p class="hero__eyebrow">Hello, I'm</p>
                 <h1 class="hero__title">Tyler Mullins</h1>
-                <p class="hero__subtitle">Product Manager @ Plateau Telecommunications</p>
-                <p class="hero__description">Business Analysis, Software Project Management</p>
-                <a href="#contact" class="btn btn--primary btn--lg">Get In Touch</a>
+                <h2 class="hero__subtitle">Product Manager <span class="hero__at">@</span> Plateau Telecommunications</h2>
+                <p class="hero__description">
+                    Driving product innovation in the telecom sector through Agile leadership, rigorous business analysis, and cross-functional collaboration.
+                </p>
+                <div class="hero__cta">
+                    <a href="#contact" class="btn btn--primary btn--lg">Get In Touch</a>
+                    <a href="#experience" class="btn btn--ghost btn--lg">View My Work</a>
+                </div>
+                <div class="hero__social">
+                    <a href="https://www.linkedin.com/in/tymullins/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/TyMulli" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <div class="hero__photo-wrapper">
+                    <img src="https://i.imgur.com/J3OwHSf.jpeg" alt="Tyler Mullins — Product Manager" class="hero__photo">
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="hero__scroll" aria-label="Scroll down">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+
+    <!-- ===== STATS BAR ===== -->
+    <section class="stats">
+        <div class="container stats__grid">
+            <div class="stat">
+                <span class="stat__number">8+</span>
+                <span class="stat__label">Years of Experience</span>
+            </div>
+            <div class="stat">
+                <span class="stat__number">5</span>
+                <span class="stat__label">Roles Held</span>
+            </div>
+            <div class="stat">
+                <span class="stat__number">10+</span>
+                <span class="stat__label">Certifications</span>
+            </div>
+            <div class="stat">
+                <span class="stat__number">3</span>
+                <span class="stat__label">Industries Served</span>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about py-16">
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="about section">
         <div class="container">
             <div class="section__header">
+                <span class="section__tag">Who I Am</span>
                 <h2 class="section__title">About Me</h2>
-                <div class="section__divider"></div>
             </div>
             <div class="about__content">
-                <p class="about__text">
-                    As a Product Manager with over two years of experience, my contributions center on enhancing product capabilities and streamlining processes. My certifications in Agile and Business Analysis support a methodical approach to managing software requirements and facilitating operational efficiency.
-                </p>
-                <p class="about__text">
-                    Collaborating with cross-functional teams, my efforts emphasize solutions that align with organizational goals and customer needs. With a focus on telecommunications systems and products, my aim is to empower teams to deliver exceptional results and maintain a competitive edge in the telecommunications sector.
-                </p>
-                
+                <div class="about__text-block">
+                    <p>
+                        I am a results-driven Product Manager with over three years of experience in the telecommunications sector, currently leading product innovation at <strong>Plateau Telecommunications</strong> in Clovis, New Mexico. My work centers on translating complex business needs into actionable product roadmaps, managing software requirements end-to-end, and enabling cross-functional teams to deliver high-impact solutions on time.
+                    </p>
+                    <p>
+                        Prior to my current role, I built a strong foundation across industrial automation, oil &amp; gas, and oilfield logistics — giving me a uniquely broad perspective on operational efficiency, stakeholder management, and technology-driven problem solving. I hold multiple certifications in Agile methodologies and Business Analysis, and I bring a methodical, data-informed approach to every product decision.
+                    </p>
+                </div>
                 <div class="about__highlights">
                     <div class="highlight">
-                        <h4>Requirements Expert</h4>
-                        <p>Expert in requirements elicitation and process modeling</p>
+                        <div class="highlight__icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <div>
+                            <h4>Requirements Expert</h4>
+                            <p>Certified in requirements elicitation, business process modeling, and stakeholder analysis</p>
+                        </div>
                     </div>
                     <div class="highlight">
-                        <h4>Agile Leadership</h4>
-                        <p>Agile methodologies and software project leadership</p>
+                        <div class="highlight__icon"><i class="fa-solid fa-arrows-spin"></i></div>
+                        <div>
+                            <h4>Agile Leadership</h4>
+                            <p>Experienced Scrum practitioner driving iterative delivery and continuous improvement</p>
+                        </div>
                     </div>
                     <div class="highlight">
-                        <h4>Innovation Focus</h4>
-                        <p>Innovation in telecom sector with technical proficiency</p>
+                        <div class="highlight__icon"><i class="fa-solid fa-tower-broadcast"></i></div>
+                        <div>
+                            <h4>Telecom Focus</h4>
+                            <p>Deep domain expertise in telecommunications systems, products, and regulatory landscape</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience py-16">
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="experience section section--alt">
         <div class="container">
             <div class="section__header">
+                <span class="section__tag">Career</span>
                 <h2 class="section__title">Professional Experience</h2>
-                <div class="section__divider"></div>
             </div>
-            <div class="experience__timeline">
+            <div class="timeline">
+
                 <div class="timeline__item">
-                    <div class="timeline__marker"></div>
-                    <div class="timeline__content">
-                        <div class="timeline__header">
-                            <h3>Product Manager</h3>
-                            <span class="timeline__company">Plateau Telecommunications</span>
+                    <div class="timeline__marker">
+                        <div class="timeline__dot"></div>
+                    </div>
+                    <div class="timeline__card">
+                        <div class="timeline__card-header">
+                            <div>
+                                <h3 class="timeline__role">Product Manager</h3>
+                                <span class="timeline__company">Plateau Telecommunications</span>
+                            </div>
+                            <div class="timeline__meta">
+                                <span class="badge badge--primary">Aug 2022 – Present</span>
+                                <span class="timeline__location"><i class="fa-solid fa-location-dot"></i> Clovis, NM</span>
+                            </div>
                         </div>
-                        <div class="timeline__meta">
-                            <span class="timeline__duration">August 2022 - Present</span>
-                            <span class="timeline__location">Clovis, New Mexico, United States</span>
-                        </div>
-                        <p class="timeline__description">
-                            Leading product innovation in telecommunications sector, focusing on business analysis and software project management to drive progress and efficiency.
-                        </p>
+                        <ul class="timeline__bullets">
+                            <li>Lead end-to-end product development for telecommunications software, aligning roadmaps with strategic business objectives and customer needs</li>
+                            <li>Facilitate Agile ceremonies including sprint planning, backlog grooming, and retrospectives across cross-functional teams</li>
+                            <li>Drive requirements elicitation and documentation, translating stakeholder needs into detailed user stories and acceptance criteria</li>
+                            <li>Collaborate with engineering, operations, and executive leadership to prioritize features and manage competing demands</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="timeline__item">
-                    <div class="timeline__marker"></div>
-                    <div class="timeline__content">
-                        <div class="timeline__header">
-                            <h3>Product Owner</h3>
-                            <span class="timeline__company">SitePro Inc.</span>
+                    <div class="timeline__marker">
+                        <div class="timeline__dot"></div>
+                    </div>
+                    <div class="timeline__card">
+                        <div class="timeline__card-header">
+                            <div>
+                                <h3 class="timeline__role">Product Owner</h3>
+                                <span class="timeline__company">SitePro Inc.</span>
+                            </div>
+                            <div class="timeline__meta">
+                                <span class="badge">Dec 2020 – Jul 2022</span>
+                                <span class="timeline__location"><i class="fa-solid fa-location-dot"></i> Lubbock, TX</span>
+                            </div>
                         </div>
-                        <div class="timeline__meta">
-                            <span class="timeline__duration">December 2020 - July 2022</span>
-                            <span class="timeline__location">Lubbock, Texas</span>
-                        </div>
-                        <p class="timeline__description">
-                            Managed product development lifecycle for industrial automation and control systems serving energy, municipal, and agricultural industries.
-                        </p>
+                        <ul class="timeline__bullets">
+                            <li>Owned the product backlog and release planning for industrial automation and control systems serving energy, municipal, and agricultural industries</li>
+                            <li>Partnered with engineering teams to define and refine product requirements, ensuring timely delivery of high-quality features</li>
+                            <li>Conducted market research and competitive analysis to inform product strategy and identify growth opportunities</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="timeline__item">
-                    <div class="timeline__marker"></div>
-                    <div class="timeline__content">
-                        <div class="timeline__header">
-                            <h3>Service Coordinator</h3>
-                            <span class="timeline__company">SitePro</span>
+                    <div class="timeline__marker">
+                        <div class="timeline__dot"></div>
+                    </div>
+                    <div class="timeline__card">
+                        <div class="timeline__card-header">
+                            <div>
+                                <h3 class="timeline__role">Service Coordinator</h3>
+                                <span class="timeline__company">SitePro</span>
+                            </div>
+                            <div class="timeline__meta">
+                                <span class="badge">May 2019 – Dec 2020</span>
+                                <span class="timeline__location"><i class="fa-solid fa-location-dot"></i> Lubbock, TX</span>
+                            </div>
                         </div>
-                        <div class="timeline__meta">
-                            <span class="timeline__duration">May 2019 - December 2020</span>
-                            <span class="timeline__location">Lubbock, Texas</span>
-                        </div>
-                        <p class="timeline__description">
-                            Coordinated service delivery for remote monitoring and control solutions across multiple industry verticals.
-                        </p>
+                        <ul class="timeline__bullets">
+                            <li>Coordinated service delivery for remote monitoring and control solutions across energy, municipal, and agricultural industry verticals</li>
+                            <li>Served as the primary liaison between field technicians and customers, ensuring SLA compliance and high satisfaction scores</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="timeline__item">
-                    <div class="timeline__marker"></div>
-                    <div class="timeline__content">
-                        <div class="timeline__header">
-                            <h3>Oil & Gas Solutions Specialist</h3>
-                            <span class="timeline__company">SitePro</span>
+                    <div class="timeline__marker">
+                        <div class="timeline__dot"></div>
+                    </div>
+                    <div class="timeline__card">
+                        <div class="timeline__card-header">
+                            <div>
+                                <h3 class="timeline__role">Oil &amp; Gas Solutions Specialist</h3>
+                                <span class="timeline__company">SitePro</span>
+                            </div>
+                            <div class="timeline__meta">
+                                <span class="badge">Sep 2018 – May 2019</span>
+                                <span class="timeline__location"><i class="fa-solid fa-location-dot"></i> Lubbock, TX</span>
+                            </div>
                         </div>
-                        <div class="timeline__meta">
-                            <span class="timeline__duration">September 2018 - May 2019</span>
-                            <span class="timeline__location">Lubbock, Texas</span>
-                        </div>
-                        <p class="timeline__description">
-                            Specialized in automation solutions for oil & gas operations, focusing on regulatory compliance and operational efficiency.
-                        </p>
+                        <ul class="timeline__bullets">
+                            <li>Delivered automation solutions for oil &amp; gas operations, focusing on regulatory compliance and operational efficiency improvements</li>
+                            <li>Developed technical proposals and solution documentation for prospective clients in the upstream energy sector</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="timeline__item">
-                    <div class="timeline__marker"></div>
-                    <div class="timeline__content">
-                        <div class="timeline__header">
-                            <h3>Regional Operations Manager</h3>
-                            <span class="timeline__company">SandBox Logistics</span>
+                    <div class="timeline__marker">
+                        <div class="timeline__dot"></div>
+                    </div>
+                    <div class="timeline__card">
+                        <div class="timeline__card-header">
+                            <div>
+                                <h3 class="timeline__role">Regional Operations Manager</h3>
+                                <span class="timeline__company">SandBox Logistics</span>
+                            </div>
+                            <div class="timeline__meta">
+                                <span class="badge">Oct 2015 – Apr 2018</span>
+                                <span class="timeline__location"><i class="fa-solid fa-location-dot"></i> Houston, TX</span>
+                            </div>
                         </div>
-                        <div class="timeline__meta">
-                            <span class="timeline__duration">October 2015 - April 2018</span>
-                            <span class="timeline__location">Houston, Texas</span>
-                        </div>
-                        <p class="timeline__description">
-                            Managed regional operations for innovative oilfield logistics solutions, overseeing last-mile delivery optimization.
-                        </p>
+                        <ul class="timeline__bullets">
+                            <li>Managed regional operations for an innovative oilfield logistics company, overseeing last-mile delivery optimization and team performance</li>
+                            <li>Coordinated logistics for multiple simultaneous drilling operations, ensuring on-time delivery and cost efficiency across the region</li>
+                        </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills py-16">
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="skills section">
         <div class="container">
             <div class="section__header">
+                <span class="section__tag">Expertise</span>
                 <h2 class="section__title">Core Skills</h2>
-                <div class="section__divider"></div>
             </div>
-            <div class="skills__grid">
-                <div class="skill__item">Business Analysis</div>
-                <div class="skill__item">Software Project Management</div>
-                <div class="skill__item">Agile Requirements</div>
-                <div class="skill__item">Business Process Modeling</div>
-                <div class="skill__item">UX Foundations</div>
-                <div class="skill__item">Time Management</div>
-                <div class="skill__item">Requirements Elicitation</div>
-                <div class="skill__item">Product Management</div>
-                <div class="skill__item">Telecommunications</div>
-                <div class="skill__item">Industrial Automation</div>
+            <div class="skills__categories">
+
+                <div class="skill-category">
+                    <h3 class="skill-category__title"><i class="fa-solid fa-briefcase"></i> Product &amp; Project</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--primary">Product Management</span>
+                        <span class="skill-tag skill-tag--primary">Software Project Management</span>
+                        <span class="skill-tag skill-tag--primary">Agile / Scrum</span>
+                        <span class="skill-tag skill-tag--primary">Product Roadmapping</span>
+                        <span class="skill-tag skill-tag--primary">Backlog Management</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category__title"><i class="fa-solid fa-chart-line"></i> Business Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--secondary">Business Analysis</span>
+                        <span class="skill-tag skill-tag--secondary">Requirements Elicitation</span>
+                        <span class="skill-tag skill-tag--secondary">Business Process Modeling</span>
+                        <span class="skill-tag skill-tag--secondary">Stakeholder Management</span>
+                        <span class="skill-tag skill-tag--secondary">Business Benefits Realization</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category__title"><i class="fa-solid fa-tower-broadcast"></i> Domain Knowledge</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--tertiary">Telecommunications</span>
+                        <span class="skill-tag skill-tag--tertiary">Industrial Automation</span>
+                        <span class="skill-tag skill-tag--tertiary">Oil &amp; Gas Operations</span>
+                        <span class="skill-tag skill-tag--tertiary">Oilfield Logistics</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category__title"><i class="fa-solid fa-laptop-code"></i> Technical &amp; Design</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--neutral">UX Foundations</span>
+                        <span class="skill-tag skill-tag--neutral">Multidevice Design</span>
+                        <span class="skill-tag skill-tag--neutral">Software Requirements</span>
+                        <span class="skill-tag skill-tag--neutral">Time Management</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications py-16">
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section id="certifications" class="certifications section section--alt">
         <div class="container">
             <div class="section__header">
+                <span class="section__tag">Credentials</span>
                 <h2 class="section__title">Certifications</h2>
-                <div class="section__divider"></div>
             </div>
-            <div class="certifications__grid">
-                <div class="certification__item card">
-                    <div class="card__body">
+            <div class="certs__grid">
+
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
                         <h4>Requirements Elicitation and Analysis</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">October 2021</p>
+                        <p>LinkedIn Learning · Oct 2021</p>
                     </div>
                 </div>
 
-                <div class="certification__item card">
-                    <div class="card__body">
-                        <h4>Business Analyst and Project Manager Collaboration</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">October 2021</p>
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
+                        <h4>Business Analyst &amp; Project Manager Collaboration</h4>
+                        <p>LinkedIn Learning · Oct 2021</p>
                     </div>
                 </div>
 
-                <div class="certification__item card">
-                    <div class="card__body">
-                        <h4>Business Analysis: Business Benefits Realization</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">October 2021</p>
-                    </div>
-                </div>
-
-                <div class="certification__item card">
-                    <div class="card__body">
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
                         <h4>Business Analysis Foundations</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">October 2021</p>
+                        <p>LinkedIn Learning · Oct 2021</p>
                     </div>
                 </div>
 
-                <div class="certification__item card">
-                    <div class="card__body">
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
                         <h4>Agile Requirements Foundations</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">October 2021</p>
+                        <p>LinkedIn Learning · Oct 2021</p>
                     </div>
                 </div>
 
-                <div class="certification__item card">
-                    <div class="card__body">
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
+                        <h4>Business Analysis: Business Benefits Realization</h4>
+                        <p>LinkedIn Learning · Oct 2021</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
                         <h4>Software Design: Developing Effective Requirements</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">January 2022</p>
+                        <p>LinkedIn Learning · Jan 2022</p>
                     </div>
                 </div>
 
-                <div class="certification__item card">
-                    <div class="card__body">
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
                         <h4>UX Foundations: Multidevice Design</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">February 2022</p>
+                        <p>LinkedIn Learning · Feb 2022</p>
                     </div>
                 </div>
 
-                <div class="certification__item card">
-                    <div class="card__body">
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
                         <h4>Business Benefits Realization Foundations</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">February 2022</p>
+                        <p>LinkedIn Learning · Feb 2022</p>
                     </div>
                 </div>
 
-                <div class="certification__item card">
-                    <div class="card__body">
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
                         <h4>Business Analysis Foundations: Business Process Modeling</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">February 2022</p>
+                        <p>LinkedIn Learning · Feb 2022</p>
                     </div>
                 </div>
 
-                <div class="certification__item card">
-                    <div class="card__body">
+                <div class="cert-card">
+                    <div class="cert-card__icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="cert-card__body">
                         <h4>Time Management Fundamentals</h4>
-                        <p class="certification__issuer">LinkedIn</p>
-                        <p class="certification__date">March 2022</p>
+                        <p>LinkedIn Learning · Mar 2022</p>
                     </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="education section">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__tag">Academic Background</span>
+                <h2 class="section__title">Education</h2>
+            </div>
+            <div class="edu-card">
+                <div class="edu-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="edu-card__body">
+                    <h3>Colorado Technical University</h3>
+                    <p class="edu-card__degree">Bachelor of Science</p>
+                    <p class="edu-card__field">Business Administration &amp; Information Technology</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education py-16">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title">Education</h2>
-                <div class="section__divider"></div>
-            </div>
-            <div class="education__content">
-                <h3>Colorado Technical University</h3>
-                <p class="education__degree">Bachelor of Science</p>
-                <p class="education__field">Business Administration and Information Technology</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact py-16">
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact section section--alt">
         <div class="container">
             <div class="section__header">
+                <span class="section__tag">Let's Talk</span>
                 <h2 class="section__title">Get In Touch</h2>
-                <div class="section__divider"></div>
             </div>
             <div class="contact__content">
                 <div class="contact__info">
-                    <h3>Let's Connect</h3>
-                    <p>Based in Clovis, New Mexico, I'm always open to discussing new opportunities and professional collaborations.</p>
-                    
-                    <div class="contact__links">
-                        <a href="https://www.linkedin.com/in/tymullins/" target="_blank" class="contact__link">LinkedIn</a>
-                        <a href="https://github.com/TyMulli" target="_blank" class="contact__link">GitHub</a>
-                    </div>
-                    
-                    <p class="contact__location">📍 Clovis, New Mexico, United States</p>
+                    <p>
+                        Based in Clovis, New Mexico, I am always open to discussing new opportunities, product challenges, and professional collaborations. Feel free to reach out through the form or connect with me directly on LinkedIn.
+                    </p>
+                    <ul class="contact__details">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Clovis, New Mexico, United States</span>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/tymullins/" target="_blank" rel="noopener">linkedin.com/in/tymullins</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/TyMulli" target="_blank" rel="noopener">github.com/TyMulli</a>
+                        </li>
+                    </ul>
+                    <a href="resume.pdf" download class="btn btn--primary">
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </a>
                 </div>
 
                 <div class="contact__form-container">
                     <form class="contact__form" action="https://formspree.io/f/xldwovoj" method="POST" id="contactForm">
                         <div class="form-group">
-                            <label for="name" class="form-label">Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <label for="name" class="form-label">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your full name" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <label for="email" class="form-label">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="subject" class="form-label">Subject *</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required>
+                            <label for="subject" class="form-label">Subject <span class="required">*</span></label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="What's this about?" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="message" class="form-label">Message *</label>
-                            <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                            <label for="message" class="form-label">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" class="form-control" placeholder="Tell me more..." required></textarea>
                         </div>
-
-                        <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                        <button type="submit" class="btn btn--primary btn--full-width">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                        <p class="form-success" id="formSuccess" style="display:none;">
+                            <i class="fa-solid fa-circle-check"></i> Message sent! I'll be in touch soon.
+                        </p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Tyler Mullins. All rights reserved.</p>
+        <div class="container footer__inner">
+            <p>&copy; 2026 Tyler Mullins. All rights reserved.</p>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/in/tymullins/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/TyMulli" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
         </div>
     </footer>
 
